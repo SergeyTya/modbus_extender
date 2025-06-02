@@ -1,0 +1,43 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+
+        {
+            "type": "cortex-debug",
+            "request": "launch",
+            "name": "Cortex Debug",
+            "cwd": "${workspaceFolder}",
+          
+            "serverArgs": [],
+            "servertype": "jlink",
+            "interface": "swd",
+            "runToEntryPoint": "main",
+            
+           
+            "liveWatch": {
+                "enabled": true,
+                "samplesPerSecond": 1
+            },
+
+            //"gdbPath": "gdb-multiarch",
+            // "serverpath": "/opt/SEGGER/JLink/JLinkGDBServerCLExe",
+            // "armToolchainPath": "/usr/bin/",
+
+            "gdbPath": "C:/WORK/ThirdParty/arm-none-eabi/bin/arm-none-eabi-gdb.exe",
+            "serverpath": "C:/Program Files (x86)/SEGGER/JLink_V682g/JLinkGDBServerCL.exe",
+         //   "armToolchainPath": "C:/WORK/ThirdParty/arm-none-eabi/bin/",
+
+            // "executable": "${workspaceFolder}/build/bptest.elf",
+            // "device": "STM32F401CC",
+            // "svdFile": "${workspaceFolder}/scripts/STM32F401.svd",
+            
+            "executable": "${workspaceFolder}/build/MODBUS_EXTENDER.elf",
+            "device": "GD32F450ZI",
+            "svdFile": "${workspaceFolder}/scripts/GD32F4xx.svd",
+            
+        }
+    ]
+}
