@@ -35,7 +35,7 @@
             // "svdFile": "${workspaceFolder}/scripts/STM32F401.svd",
             
             "executable": "${workspaceFolder}/build/MODBUS_EXTENDER.elf",
-            "device": "GD32F450ZI",
+            "device": "GD32F330CB",
             "svdFile": "${workspaceFolder}/scripts/GD32F4xx.svd",
             
         }
