@@ -11,15 +11,17 @@
 
 uint8_t addr = 0;
 
+int out_rx_wdg = 0;
+
 bool proces_data(uint8_t * data, size_t len, uint8_t adr);
 
 void main(){
 
-    // nvic_config();
-    // com_usart_init();
-     gpio_init();
+    nvic_config();
+    com_usart_init();
+    gpio_init();
 
-    // addr = hw_get_addres();
+    addr = hw_get_addres();
 
     int main_cnt = 0;
 
@@ -33,22 +35,5 @@ void main(){
 }
 
 
-bool proces_data(uint8_t * data, size_t len, uint8_t adr){
 
-    if(len < 4) return false;
-
-    uint16_t crc_calc = usMBCRC16(data, len);
-    uint16_t crc_fram = data[len-1] + data[len-2]*0xFFU;   
-
-    if(crc_calc != crc_fram) return false;
-
-    data[0] = adr;
-
-    crc_calc = usMBCRC16(data, len);
-
-    data[len-1] = crc_calc & 0xFF;
-    data[len-2] = (crc_calc & 0xFF00)>>8;
-
-    return true;
-}
 

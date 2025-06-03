@@ -36,6 +36,7 @@ FILE(GLOB_RECURSE LIB_SRC
         ${CMAKE_CURRENT_SOURCE_DIR}/app/gd32f3x0_it.c
         ${CMAKE_CURRENT_SOURCE_DIR}/app/gd32f3x0_usart_it.c
         ${CMAKE_CURRENT_SOURCE_DIR}/app/mbcrc.c
+        ${CMAKE_CURRENT_SOURCE_DIR}/app/extender.c
     )
 
 target_sources(${TARGET_NAME}  PUBLIC ${LIB_SRC} )
