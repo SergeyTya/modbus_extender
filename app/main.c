@@ -6,22 +6,22 @@
 
 #include "mbcrc.h"
 #include "mcu_init.h"
+#include "extender.h"
 
 
 
-uint8_t addr = 0;
+uint8_t addr_from_hw = 1;
 
-int out_rx_wdg = 0;
-
-bool proces_data(uint8_t * data, size_t len, uint8_t adr);
+RS485States glob_rs485_state = RS485_OUT_RX_ENABLE;
 
 void main(){
 
     nvic_config();
     com_usart_init();
     gpio_init();
+    
 
-    addr = hw_get_addres();
+    addr_from_hw = hw_get_addres();
 
     int main_cnt = 0;
 

@@ -32,4 +32,6 @@ void setRDEstate(TypeDef_usart *  usart, bool state);
 extern TypeDef_usart RS485_in_u0;
 extern TypeDef_usart RS485_out_u1;
 
+ void usart_dma_config(TypeDef_usart *);
+
 #endif
